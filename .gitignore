@@ -1,4 +1,5 @@
 node_modules/
+build
 
 # TypeScript cache
 *.tsbuildinfo
