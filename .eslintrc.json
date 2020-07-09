@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb-typescript/base",
+  "rules": {
+    "semi": ["error", "never"]
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ]
+}

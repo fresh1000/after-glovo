@@ -4,7 +4,6 @@ COPY package.json .
 RUN npm install
 COPY . .
 RUN npx tsc -p ./tsconfig.json
-RUN rm -rf ./node_modules
 
 FROM node:10-alpine
 WORKDIR /usr/src/app

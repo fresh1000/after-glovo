@@ -3,7 +3,8 @@ import { validationResult, Result } from 'express-validator'
 import GlovoApiService from '../services/GlovoApiService'
 import GeocoderService from '../services/GeocoderService'
 import { LocationData } from '../types/locationData'
-import { discount } from '../utils/discount'
+import discount from '../utils/discount'
+import { CoordinatesData } from '../types/coordinatesData'
 
 class PriceController {
   async getPrice(req: Request, res: Response) {
@@ -16,7 +17,7 @@ class PriceController {
       const locationData: LocationData = req.body
 
       const geocoderService = new GeocoderService()
-      const coordinates = await geocoderService.getCoordinates(locationData)
+      const coordinates: CoordinatesData[] = await geocoderService.getCoordinates(locationData)
 
       const glovoApiService = new GlovoApiService()
       const priceInfo = await glovoApiService.getPrice(coordinates)
